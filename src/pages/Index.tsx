@@ -1,15 +1,12 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Problem from "@/components/Problem";
-import Solution from "@/components/Solution";
+import WhatWeDo from "@/components/WhatWeDo";
+import Industries from "@/components/Industries";
+import Applications from "@/components/Applications";
+import Platform from "@/components/Platform";
 import HowItWorks from "@/components/HowItWorks";
-import Services from "@/components/Services";
-import MarketFocus from "@/components/MarketFocus";
-import BusinessModel from "@/components/BusinessModel";
-import Differentiation from "@/components/Differentiation";
-import Traction from "@/components/Traction";
-import Team from "@/components/Team";
-import Impact from "@/components/Impact";
+import WhySolarSentinel from "@/components/WhySolarSentinel";
+import MonitoringSolutions from "@/components/MonitoringSolutions";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -18,16 +15,13 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <Hero />
-      <Problem />
-      <Solution />
+      <WhatWeDo />
+      <Industries />
+      <Applications />
+      <Platform />
       <HowItWorks />
-      <Services />
-      <MarketFocus />
-      <BusinessModel />
-      <Differentiation />
-      <Traction />
-      <Team />
-      <Impact />
+      <WhySolarSentinel />
+      <MonitoringSolutions />
       <Contact />
       <Footer />
     </div>
