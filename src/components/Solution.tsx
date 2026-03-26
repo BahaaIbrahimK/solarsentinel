@@ -1,5 +1,5 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
-import heroImg from "@/assets/hero.jpg";
+import uavSky from "@/assets/uav-sky.jpg";
 
 const solutionBlocks = [
   {
@@ -33,7 +33,7 @@ const Solution = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <img
-              src={heroImg}
+              src={uavSky}
               alt="SolarSentinel UAV in flight"
               loading="lazy"
               className="w-full rounded-xl object-cover aspect-[4/3]"

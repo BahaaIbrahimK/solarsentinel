@@ -54,8 +54,8 @@ const Navigation = () => {
           <img
             src={isNavDark ? logoDark : logo}
             alt="SolarSentinel"
-            className="h-10 w-auto"
-            style={{ maxWidth: 160 }}
+            className="h-12 w-auto"
+            style={{ maxWidth: 200 }}
           />
         </a>
 

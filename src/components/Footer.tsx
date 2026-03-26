@@ -14,7 +14,7 @@ const Footer = () => {
     <footer style={{ background: "#0D2540", borderTop: "1px solid hsl(var(--gold))" }}>
       <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10 items-start">
         <div>
-          <img src={logoDark} alt="SolarSentinel" className="h-8 w-auto mb-3" style={{ maxWidth: 140 }} />
+          <img src={logoDark} alt="SolarSentinel" className="h-10 w-auto mb-3" style={{ maxWidth: 180 }} />
           <p className="text-white/50 text-sm italic leading-relaxed">
             Autonomous Solar UAV for Decarbonization
             <br />& Infrastructure Intelligence
