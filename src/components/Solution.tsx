@@ -1,5 +1,5 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
-import heroImg from "@/assets/hero.jpg";
+import uavSky from "@/assets/uav-sky.jpg";
 
 const solutionBlocks = [
   {
