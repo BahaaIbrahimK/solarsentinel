@@ -23,7 +23,7 @@ const Traction = () => {
             {/* Flight test photo */}
             <div>
               <img
-                src={heroImg}
+                src={uavBeach}
                 alt="SolarSentinel flight test — Dhahran"
                 loading="lazy"
                 className="w-full rounded-xl object-cover aspect-[4/3]"
@@ -36,7 +36,7 @@ const Traction = () => {
             {/* Flight map placeholder — reuse hero for now */}
             <div className="relative">
               <img
-                src={heroImg}
+                src={flightMap}
                 alt="GPS trajectory visualization"
                 loading="lazy"
                 className="w-full rounded-xl object-cover aspect-[4/3]"
