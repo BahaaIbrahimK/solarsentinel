@@ -1,5 +1,6 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
-import heroImg from "@/assets/hero.jpg";
+import uavBeach from "@/assets/uav-beach.jpg";
+import flightMap from "@/assets/flight-map.png";
 import aiaa from "@/assets/aiaa.png";
 import rdia from "@/assets/rdia.png";
 
