@@ -1,54 +1,45 @@
+import { useFadeIn } from "@/hooks/useFadeIn";
+
+const services = [
+  {
+    title: "Methane Leak Detection",
+    text: "TDLAS sensor detects methane from up to 100 meters altitude at parts-per-billion precision. OGI thermal imaging visualizes emission plumes in real time. Every leak GPS-tagged with emission rate and repair priority — ready for regulatory filing.",
+  },
+  {
+    title: "Pipeline & Infrastructure Inspection",
+    text: "Autonomous AI survey of 250+ kilometers per mission. Structural anomaly detection, corrosion flagging, and right-of-way monitoring — delivered as a digital report, not a crew debrief.",
+  },
+  {
+    title: "Oil Leak Detection",
+    text: "Computer vision model identifies surface oil contamination and spills from aerial imagery. Immediate GPS-tagged alerts enable rapid field response before leaks spread.",
+  },
+  {
+    title: "Environmental Air Quality Mapping",
+    text: "Multi-pollutant sensors map concentrations across entire cities in a single flight. Georeferenced heatmap outputs delivered to regulators, municipalities, and environmental authorities.",
+  },
+];
+
 const Services = () => {
-  const services = [
-    {
-      number: "01",
-      title: "RESIDENTIAL",
-      description: "Crafting homes that reflect individual lifestyles while maintaining architectural integrity"
-    },
-    {
-      number: "02", 
-      title: "COMMERCIAL",
-      description: "Designing functional spaces that enhance business environments and user experiences"
-    },
-    {
-      number: "03",
-      title: "RENOVATION",
-      description: "Transforming existing structures with contemporary sensibilities and sustainable practices"
-    },
-    {
-      number: "04",
-      title: "CONSULTATION",
-      description: "Providing expert guidance on design direction, planning, and architectural solutions"
-    }
-  ];
+  const fade = useFadeIn();
 
   return (
-    <section id="services" className="py-32 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
-            <h2 className="text-minimal text-muted-foreground mb-4">SERVICES</h2>
-            <h3 className="text-4xl md:text-6xl font-light text-architectural">
-              What We Do
-            </h3>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-x-20 gap-y-16">
-            {services.map((service, index) => (
-              <div key={index} className="group">
-                <div className="flex items-start space-x-6">
-                  <span className="text-minimal text-muted-foreground font-medium">
-                    {service.number}
-                  </span>
-                  <div>
-                    <h4 className="text-2xl font-light mb-4 text-architectural group-hover:text-muted-foreground transition-colors duration-500">
-                      {service.title}
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
+    <section id="services" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6" ref={fade.ref}>
+        <div className={fade.className}>
+          <h2 className="section-label text-navy">Our Services</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-navy mt-4 mb-12 leading-snug">
+            One Platform. Four Critical Services.
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {services.map((s, i) => (
+              <div
+                key={i}
+                className="bg-white border border-navy/15 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+                style={{ borderTop: "3px solid hsl(var(--gold))" }}
+              >
+                <h4 className="font-bold text-navy text-lg mb-3">{s.title}</h4>
+                <p className="text-muted-foreground leading-relaxed">{s.text}</p>
               </div>
             ))}
           </div>
