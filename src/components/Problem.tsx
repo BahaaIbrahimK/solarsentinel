@@ -9,19 +9,31 @@ const Problem = () => {
         <div className={fade.className}>
           <h2 className="section-label text-navy">The Problem</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-navy mt-4 mb-10 leading-snug">
-            The Scale of the Problem Demands a New Kind of Solution
+            Methane Monitoring Is Broken
           </h3>
 
-          <div className="space-y-6 text-muted-foreground leading-relaxed text-base md:text-lg">
-            <p>
-              Every year, 120 million tonnes of methane escape from oil and gas operations globally — a gas 80 times more potent than CO₂ over a 20-year horizon. In Saudi Arabia alone, Aramco operates over 24,000 kilometers of pipelines and refinery complexes spanning thousands of acres. The gas lost to undetected leaks represents hundreds of millions of riyals annually.
-            </p>
-            <p>
-              The tools available today were not designed for this scale. Ground crews with handheld optical gas imaging cameras inspect a large facility four times per year at best — slow, expensive, and limited by human access. Commercial drones last 20 to 45 minutes. Helicopters cost up to $2,000 per kilometer. Satellites miss transient leaks entirely, revisiting every 3 to 5 days.
-            </p>
-            <p>
-              The industry has the sensors. It has the data science. What it has been missing is the platform — one capable of carrying professional instruments for hours, not minutes, continuously and autonomously across hundreds of kilometers of critical infrastructure.
-            </p>
+          <ul className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+            <li className="flex items-start gap-3">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-gold shrink-0" />
+              Emissions remain under-detected across large industrial sites
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-gold shrink-0" />
+              Monitoring is infrequent — most facilities are inspected only a few times per year
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-gold shrink-0" />
+              Large industrial sites create blind spots that current tools cannot cover
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-gold shrink-0" />
+              Existing solutions don't scale to meet regulatory or operational demands
+            </li>
+          </ul>
+
+          <div className="mt-10 bg-light-gray rounded-xl px-6 py-5 text-center">
+            <p className="text-navy font-bold text-2xl md:text-3xl">~135 Mt</p>
+            <p className="text-muted-foreground text-sm mt-1">methane emissions from the energy sector annually (IEA)</p>
           </div>
         </div>
       </div>

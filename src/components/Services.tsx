@@ -1,21 +1,21 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
+import { Clock, Radar, BarChart3 } from "lucide-react";
 
-const services = [
+const features = [
   {
-    title: "Methane Leak Detection",
-    text: "TDLAS sensor detects methane from up to 100 meters altitude at parts-per-billion precision. OGI thermal imaging visualizes emission plumes in real time. Every leak GPS-tagged with emission rate and repair priority — ready for regulatory filing.",
+    icon: Clock,
+    title: "High-Endurance UAV",
+    text: "Covers large industrial sites in a single mission with solar-powered flight.",
   },
   {
-    title: "Pipeline & Infrastructure Inspection",
-    text: "Autonomous AI survey of 250+ kilometers per mission. Structural anomaly detection, corrosion flagging, and right-of-way monitoring — delivered as a digital report, not a crew debrief.",
+    icon: Radar,
+    title: "Methane Detection",
+    text: "TDLAS-based sensing for accurate, real-time leak identification and geolocation.",
   },
   {
-    title: "Oil Leak Detection",
-    text: "Computer vision model identifies surface oil contamination and spills from aerial imagery. Immediate GPS-tagged alerts enable rapid field response before leaks spread.",
-  },
-  {
-    title: "Environmental Air Quality Mapping",
-    text: "Multi-pollutant sensors map concentrations across entire cities in a single flight. Georeferenced heatmap outputs delivered to regulators, municipalities, and environmental authorities.",
+    icon: BarChart3,
+    title: "Automated Reporting",
+    text: "AI-powered geotagged outputs ready for operations teams and regulators.",
   },
 ];
 
@@ -23,23 +23,26 @@ const Services = () => {
   const fade = useFadeIn();
 
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-light-gray">
       <div className="max-w-7xl mx-auto px-6" ref={fade.ref}>
         <div className={fade.className}>
-          <h2 className="section-label text-navy">Our Services</h2>
+          <h2 className="section-label text-navy">Features</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-navy mt-4 mb-12 leading-snug">
-            One Platform. Four Critical Services.
+            Built for Industrial Scale
           </h3>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((s, i) => (
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((f, i) => (
               <div
                 key={i}
-                className="bg-white border border-navy/15 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+                className="bg-white border border-border rounded-xl p-8 text-center hover:shadow-lg transition-shadow duration-300"
                 style={{ borderTop: "3px solid hsl(var(--gold))" }}
               >
-                <h4 className="font-bold text-navy text-lg mb-3">{s.title}</h4>
-                <p className="text-muted-foreground leading-relaxed">{s.text}</p>
+                <div className="w-14 h-14 rounded-full bg-navy/5 flex items-center justify-center mx-auto mb-5">
+                  <f.icon className="w-6 h-6 text-gold" />
+                </div>
+                <h4 className="font-bold text-navy text-lg mb-2">{f.title}</h4>
+                <p className="text-muted-foreground leading-relaxed text-sm">{f.text}</p>
               </div>
             ))}
           </div>
