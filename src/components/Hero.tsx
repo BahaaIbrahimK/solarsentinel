@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 dot-grid" />
 
       <div className="relative z-10 text-center max-w-3xl mx-auto px-6 pt-28 pb-20">
-        <img src={logo} alt="SolarSentinel" className="h-24 md:h-32 w-auto mx-auto mb-16" />
+        <img src={logo} alt="SolarSentinel" className="h-20 md:h-24 w-auto mx-auto mb-14" />
 
         <h1 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-primary-foreground leading-[1.15] mb-8 tracking-tight">
           Persistent Aerial Monitoring
