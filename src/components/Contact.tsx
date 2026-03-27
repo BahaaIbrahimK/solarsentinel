@@ -11,33 +11,37 @@ const Contact = () => {
     setSubmitted(true);
   };
 
+  const inputClass = "w-full px-4 py-3.5 rounded-xl bg-primary-foreground/[0.06] text-primary-foreground border border-primary-foreground/10 placeholder:text-primary-foreground/30 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-sm";
+
   return (
-    <section id="contact" className="py-24" style={{ background: "hsl(var(--navy))" }}>
+    <section id="contact" className="py-28 bg-navy">
       <div className="max-w-xl mx-auto px-6" ref={fade.ref}>
         <div className={fade.className}>
-          <h2 className="section-label text-gold text-center mx-auto">Contact</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-primary-foreground mt-4 mb-3 text-center">
-            Talk to Us About Your Monitoring Use Case
-          </h3>
-          <p className="text-primary-foreground/60 mb-10 text-center text-base max-w-md mx-auto">
-            From refineries and pipelines to landfills and air-quality programs — let's discuss how SolarSentinel can help.
-          </p>
+          <div className="text-center mb-12">
+            <h2 className="section-label text-gold mx-auto">Contact</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-primary-foreground mt-4 mb-3">
+              Talk to Us About Your Monitoring Use Case
+            </h3>
+            <p className="text-primary-foreground/40 text-base max-w-md mx-auto">
+              From refineries and pipelines to landfills and air-quality programs — let's discuss how SolarSentinel can help.
+            </p>
+          </div>
 
           {submitted ? (
-            <div className="bg-primary-foreground/10 rounded-xl p-10 text-center">
+            <div className="bg-primary-foreground/[0.06] border border-primary-foreground/10 rounded-2xl p-12 text-center">
               <p className="text-gold text-xl font-semibold mb-2">Message Sent ✓</p>
-              <p className="text-primary-foreground/70">We'll be in touch shortly.</p>
+              <p className="text-primary-foreground/50">We'll be in touch shortly.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <input type="text" placeholder="Name" required value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-card text-navy border border-border placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold" />
+                className={inputClass} />
               <input type="text" placeholder="Organization" required value={form.organization}
                 onChange={(e) => setForm({ ...form, organization: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-card text-navy border border-border placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold" />
+                className={inputClass} />
               <select value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-card text-navy border border-border focus:outline-none focus:ring-2 focus:ring-gold">
+                className={inputClass}>
                 <option value="">Select Role</option>
                 <option>Potential Client</option>
                 <option>Partner</option>
@@ -46,20 +50,20 @@ const Contact = () => {
               </select>
               <input type="email" placeholder="Email" required value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-card text-navy border border-border placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold" />
+                className={inputClass} />
               <textarea placeholder="Message (optional)" rows={4} value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-card text-navy border border-border placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold resize-none" />
+                className={`${inputClass} resize-none`} />
               <button type="submit"
-                className="w-full py-3 bg-gold text-navy font-semibold rounded-lg hover:brightness-110 transition text-sm">
+                className="w-full py-3.5 bg-gold text-navy font-semibold rounded-xl hover:brightness-110 transition text-sm tracking-wide">
                 Contact SolarSentinel
               </button>
             </form>
           )}
 
-          <div className="text-center mt-8 text-primary-foreground/50 text-sm space-y-1">
-            <p>📧 bahaaibrahim117@gmail.com</p>
-            <p>📍 IRC-ASE, KFUPM, Dhahran, Saudi Arabia</p>
+          <div className="text-center mt-10 text-primary-foreground/30 text-sm space-y-1">
+            <p>contact@solarsentinelco.com</p>
+            <p>IRC-ASE, KFUPM, Dhahran, Saudi Arabia</p>
           </div>
         </div>
       </div>
