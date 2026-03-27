@@ -11,10 +11,12 @@ const Hero = () => {
       <div className="relative z-10 text-center max-w-3xl mx-auto px-6 pt-28 pb-20">
         <img src={logo} alt="SolarSentinel" className="h-20 md:h-24 w-auto mx-auto mb-14" />
 
-        <h1 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-primary-foreground leading-[1.15] mb-8 tracking-tight">
-          Persistent Aerial Monitoring
-          <br />
-          <span className="text-gold">for Industrial & Environmental Operations</span>
+        <p className="text-gold text-sm font-semibold tracking-[0.25em] uppercase mb-5">Aerial Intelligence Platform</p>
+        <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold text-primary-foreground leading-[1.1] mb-4 tracking-tight">
+          Persistent Monitoring
+        </h1>
+        <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold leading-[1.1] mb-8 tracking-tight">
+          <span className="bg-gradient-to-r from-gold to-[hsl(37,87%,63%)] bg-clip-text text-transparent">for Industrial Operations</span>
         </h1>
 
         <p className="text-primary-foreground/50 text-base md:text-lg max-w-[600px] mx-auto mb-12 leading-relaxed font-light">
