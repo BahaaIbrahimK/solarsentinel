@@ -5,8 +5,10 @@ import Industries from "@/components/Industries";
 import Applications from "@/components/Applications";
 import Platform from "@/components/Platform";
 import HowItWorks from "@/components/HowItWorks";
+import BuiltInHouse from "@/components/BuiltInHouse";
 import WhySolarSentinel from "@/components/WhySolarSentinel";
 import MonitoringSolutions from "@/components/MonitoringSolutions";
+import Team from "@/components/Team";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,8 +22,10 @@ const Index = () => {
       <Applications />
       <Platform />
       <HowItWorks />
+      <BuiltInHouse />
       <WhySolarSentinel />
       <MonitoringSolutions />
+      <Team />
       <Contact />
       <Footer />
     </div>
