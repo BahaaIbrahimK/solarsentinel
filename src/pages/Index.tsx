@@ -9,6 +9,7 @@ import HowItWorks from "@/components/HowItWorks";
 import BuiltInHouse from "@/components/BuiltInHouse";
 import WhySolarSentinel from "@/components/WhySolarSentinel";
 import MonitoringSolutions from "@/components/MonitoringSolutions";
+import VisionBreak from "@/components/VisionBreak";
 import Team from "@/components/Team";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -27,6 +28,7 @@ const Index = () => {
       <BuiltInHouse />
       <WhySolarSentinel />
       <MonitoringSolutions />
+      <VisionBreak />
       <Team />
       <Contact />
       <Footer />
