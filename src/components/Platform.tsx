@@ -1,11 +1,11 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
-import uavSky from "@/assets/uav-sky.jpg";
+import uavSky from "@/assets/uav-sky-new.jpg";
 
 const cards = [
-  { title: "High-Endurance UAV", text: "Designed for extended missions over large industrial and environmental assets." },
-  { title: "Sensor Integration", text: "Supports methane sensing, optical gas imaging, oil detection, and air-quality payloads." },
-  { title: "Onboard Intelligence", text: "Processes mission data and supports automated detection and reporting workflows." },
-  { title: "Actionable Outputs", text: "Delivers geotagged results for inspection, compliance, and operational decision-making." },
+  { title: "High-Endurance Solar UAV", text: "6+ hours projected endurance based on flight-tested data and energy modeling." },
+  { title: "TDLAS Methane Payload", text: "High-precision TDLAS methane sensing from altitudes up to 100 m." },
+  { title: "Onboard AI Workflow", text: "Automated onboard processing and geotagged reporting during flight." },
+  { title: "Actionable Reports", text: "Automated geotagged maps and quantified emission estimates." },
 ];
 
 const Platform = () => {
