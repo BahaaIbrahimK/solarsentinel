@@ -8,6 +8,19 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const subject = `SolarSentinel inquiry from ${form.name}${form.organization ? ` (${form.organization})` : ""}`;
+    const body = [
+      `Name: ${form.name}`,
+      `Organization: ${form.organization}`,
+      `Role: ${form.role || "Not specified"}`,
+      `Email: ${form.email}`,
+      "",
+      form.message || "(No message provided)",
+    ].join("\n");
+
+    window.location.href = `mailto:contact@solarsentinelco.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     setSubmitted(true);
   };
 
@@ -23,14 +36,14 @@ const Contact = () => {
               Talk to Us About Your Monitoring Use Case
             </h3>
             <p className="text-primary-foreground/40 text-base max-w-md mx-auto">
-              From refineries and pipelines to landfills and air-quality programs — let's discuss how SolarSentinel can help.
+              Refinery or gas-plant operator, partner, or investor — let's discuss how SolarSentinel can help.
             </p>
           </div>
 
           {submitted ? (
             <div className="bg-primary-foreground/[0.06] border border-primary-foreground/10 rounded-2xl p-12 text-center">
-              <p className="text-gold text-xl font-semibold mb-2">Message Sent ✓</p>
-              <p className="text-primary-foreground/50">We'll be in touch shortly.</p>
+              <p className="text-gold text-xl font-semibold mb-2">Almost There</p>
+              <p className="text-primary-foreground/50">Your email client should now be open with your message ready to send — hit send to reach us.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
