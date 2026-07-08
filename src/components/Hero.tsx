@@ -1,41 +1,90 @@
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import logo from "@/assets/logo-dark.png";
 import heroBg from "@/assets/hero-refinery-wide.jpg";
+import { ScanRipple } from "@/components/brand/ScanRipple";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const Hero = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1.05, 1.18]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-navy">
-      {/* Background photo */}
-      <img src={heroBg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(var(--navy)/0.88) 0%, hsl(var(--navy)/0.80) 45%, hsl(var(--navy)/0.96) 100%)" }} />
-      <div className="absolute inset-0 dot-grid opacity-40" />
+    <section ref={ref} id="hero" className="relative h-screen min-h-[680px] flex flex-col justify-center overflow-hidden bg-navy">
+      {/* Parallax background photo */}
+      <motion.img
+        src={heroBg} alt="" aria-hidden="true"
+        style={{ y: bgY, scale: bgScale }}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(var(--navy)/0.86) 0%, hsl(var(--navy)/0.72) 40%, hsl(var(--navy)/0.97) 100%)" }} />
+      <div className="absolute inset-0 dot-grid opacity-30" />
 
-      <div className="relative z-10 text-center max-w-3xl mx-auto px-6 pt-28 pb-20">
-        <img src={logo} alt="SolarSentinel" className="h-20 md:h-24 w-auto mx-auto mb-14" />
+      {/* Signature scan-ripple, offset behind headline */}
+      <ScanRipple className="absolute top-[24%] left-1/2 -translate-x-1/2 w-[520px] h-[520px] opacity-40 pointer-events-none" />
 
-        <p className="text-gold text-sm font-semibold tracking-[0.25em] uppercase mb-5">Solar-Powered Aerial Methane Monitoring</p>
-        <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold text-primary-foreground leading-[1.1] mb-4 tracking-tight">
-          Persistent Methane Intelligence
+      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <motion.img
+          src={logo} alt="SolarSentinel" className="h-16 md:h-20 w-auto mx-auto mb-10"
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}
+        />
+
+        <motion.p
+          className="text-gold text-xs md:text-sm font-semibold tracking-[0.32em] uppercase mb-6"
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }}
+        >
+          Solar-Powered Aerial Methane Monitoring
+        </motion.p>
+
+        <h1 className="font-display text-[2.6rem] md:text-6xl lg:text-7xl font-semibold text-primary-foreground leading-[1.04] mb-7">
+          <motion.span className="block" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.25, ease }}>
+            Sensing the invisible,
+          </motion.span>
+          <motion.span
+            className="block bg-gradient-to-r from-gold via-[hsl(37,90%,62%)] to-gold bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.38, ease }}
+          >
+            from the sky.
+          </motion.span>
         </h1>
-        <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold leading-[1.1] mb-8 tracking-tight">
-          <span className="bg-gradient-to-r from-gold to-[hsl(37,87%,63%)] bg-clip-text text-transparent">From the Sky</span>
-        </h1>
 
-        <p className="text-primary-foreground/50 text-base md:text-lg max-w-[620px] mx-auto mb-12 leading-relaxed font-light">
-          A high-endurance solar UAV service for frequent methane screening, source localization, quantified emission estimates, and repair verification — built for refineries and gas plants in Saudi Arabia.
-        </p>
+        <motion.p
+          className="text-primary-foreground/55 text-base md:text-lg max-w-[600px] mx-auto mb-10 leading-relaxed font-light"
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5, ease }}
+        >
+          A high-endurance solar UAV service for frequent methane screening, source localization, and
+          repair verification — built for refineries and gas plants across Saudi Arabia.
+        </motion.p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" className="px-10 py-4 bg-gold text-navy font-semibold rounded-lg hover:brightness-110 transition text-sm tracking-wide">
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.62, ease }}
+        >
+          <a href="#contact" className="group px-8 py-4 bg-gold text-navy font-semibold rounded-full hover:brightness-105 transition text-sm tracking-wide inline-flex items-center justify-center gap-2">
             Request a Pilot
+            <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
-          <a href="#how-it-works" className="px-10 py-4 border border-primary-foreground/20 text-primary-foreground/80 font-medium rounded-lg hover:bg-primary-foreground/5 transition text-sm tracking-wide">
+          <a href="#how-it-works" className="px-8 py-4 border border-primary-foreground/25 text-primary-foreground/85 font-medium rounded-full hover:bg-primary-foreground/5 transition text-sm tracking-wide backdrop-blur-sm">
             See How It Works
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32" style={{ background: "linear-gradient(to top, hsl(var(--background)), transparent)" }} />
+      {/* Scroll cue */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 1 }}
+      >
+        <span className="text-primary-foreground/40 text-[10px] uppercase tracking-[0.25em]">Scroll</span>
+        <motion.div className="w-px h-8 bg-gradient-to-b from-gold to-transparent"
+          animate={{ scaleY: [0.4, 1, 0.4], opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          style={{ transformOrigin: "top" }} />
+      </motion.div>
     </section>
   );
 };

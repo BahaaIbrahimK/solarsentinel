@@ -1,43 +1,38 @@
-import { useFadeIn } from "@/hooks/useFadeIn";
-import { Plane, Radar, Cpu, FileText } from "lucide-react";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
+import { SolarWingIcon, LaserSensorIcon, MethaneIcon, ReportIcon } from "@/components/brand/icons";
 
 const cards = [
-  { icon: Plane, title: "Long-Range UAV Operations", text: "Extended missions across large industrial sites and distributed infrastructure." },
-  { icon: Radar, title: "Methane-Specific Sensing", text: "Purpose-built detection for accurate leak identification and quantification." },
-  { icon: Cpu, title: "Onboard Intelligence", text: "Real-time processing and automated detection during flight." },
-  { icon: FileText, title: "Automated Reporting", text: "Geotagged outputs ready for operations, compliance, and decision-making." },
+  { Icon: SolarWingIcon, title: "High-Endurance Solar UAV", text: "6+ hours of projected endurance, flight-tested — covering large sites in a single mission." },
+  { Icon: LaserSensorIcon, title: "TDLAS Methane Sensing", text: "High-precision laser-based methane detection from altitudes up to 100 m." },
+  { Icon: MethaneIcon, title: "Onboard AI Detection", text: "Real-time source localization and emission estimation, processed in flight." },
+  { Icon: ReportIcon, title: "Automated Reporting", text: "Geotagged maps and quantified emission estimates, ready for operations and compliance." },
 ];
 
 const WhatWeDo = () => {
-  const fade = useFadeIn();
-
   return (
-    <section id="what-we-do" className="py-28 bg-background">
-      <div className="max-w-6xl mx-auto px-6" ref={fade.ref}>
-        <div className={fade.className}>
-          <div className="text-center mb-16">
-            <h2 className="section-label text-gold mx-auto">What We Do</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-navy mt-4 leading-snug">
-              What SolarSentinel Does
-            </h3>
-            <p className="text-muted-foreground text-base md:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-              An aerial monitoring platform combining long-range operations, methane sensing, onboard intelligence, and automated reporting.
-            </p>
-          </div>
+    <section id="what-we-do" className="relative py-28 md:py-36 bg-sand overflow-hidden">
+      <div className="absolute inset-0 warm-grid opacity-60" />
+      <div className="relative max-w-6xl mx-auto px-6">
+        <Reveal className="max-w-2xl mb-16">
+          <p className="text-gold text-xs font-semibold uppercase tracking-[0.28em] mb-4">What We Do</p>
+          <h2 className="font-display text-3xl md:text-5xl font-semibold text-navy leading-[1.08]">
+            A methane-monitoring service, not just a drone.
+          </h2>
+        </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
-            {cards.map((c, i) => (
-              <div key={i} className="group bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="w-14 h-14 rounded-2xl bg-navy flex items-center justify-center mb-6">
-                  <c.icon className="w-6 h-6 text-gold" />
+        <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {cards.map((c, i) => (
+            <StaggerItem key={i}>
+              <div className="group relative h-full bg-card border border-border rounded-2xl p-7 transition-all duration-300 hover:shadow-[0_20px_50px_-20px_hsl(var(--navy)/0.25)] hover:-translate-y-1 hover:border-gold/40">
+                <div className="w-12 h-12 rounded-xl bg-navy flex items-center justify-center mb-6 text-gold transition-colors duration-300 group-hover:bg-gold group-hover:text-navy">
+                  <c.Icon className="w-6 h-6" />
                 </div>
-                <h4 className="font-bold text-navy text-base mb-2">{c.title}</h4>
+                <h3 className="font-display font-semibold text-navy text-lg mb-2">{c.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{c.text}</p>
               </div>
-            ))}
-          </div>
-        </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </div>
     </section>
   );
