@@ -25,9 +25,9 @@ const Hero = () => {
       <div className="absolute inset-0 dot-grid opacity-30" />
 
       {/* Signature scan-ripple, offset behind headline */}
-      <ScanRipple className="absolute top-[42%] left-1/2 -translate-x-1/2 w-[520px] h-[520px] opacity-40 pointer-events-none" />
+      <ScanRipple className="absolute top-[52%] left-1/2 -translate-x-1/2 w-[520px] h-[520px] opacity-40 pointer-events-none" />
 
-      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 max-w-4xl mx-auto px-6 text-center mt-[16vh]">
+      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 max-w-4xl mx-auto px-6 text-center mt-[26vh]">
         <motion.p
           className="text-gold text-xs md:text-sm font-semibold tracking-[0.32em] uppercase mb-6"
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }}
