@@ -24,6 +24,7 @@ const Contact = () => {
   };
 
   const inputClass = "w-full px-4 py-3.5 rounded-xl bg-primary-foreground/[0.06] text-primary-foreground border border-primary-foreground/10 placeholder:text-primary-foreground/30 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-sm";
+  const optionStyle = { color: "#0B1E33", backgroundColor: "#ffffff" };
 
   return (
     <section id="contact" className="relative py-24 md:py-32 bg-navy overflow-hidden">
@@ -53,12 +54,13 @@ const Contact = () => {
                 onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputClass} />
               <input type="text" placeholder="Organization" required value={form.organization}
                 onChange={(e) => setForm({ ...form, organization: e.target.value })} className={inputClass} />
-              <select value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })} className={inputClass}>
-                <option value="">Select Role</option>
-                <option>Potential Client</option>
-                <option>Partner</option>
-                <option>Investor</option>
-                <option>Other</option>
+              <select value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })}
+                className={`${inputClass} ${form.role ? "" : "text-primary-foreground/40"}`}>
+                <option value="" style={optionStyle}>Select Role</option>
+                <option style={optionStyle}>Potential Client</option>
+                <option style={optionStyle}>Partner</option>
+                <option style={optionStyle}>Investor</option>
+                <option style={optionStyle}>Other</option>
               </select>
               <input type="email" placeholder="Email" required value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClass} />
