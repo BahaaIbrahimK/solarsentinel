@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import StatsBand from "@/components/StatsBand";
 import WhatWeDo from "@/components/WhatWeDo";
+import SystemArchitecture from "@/components/SystemArchitecture";
 import HowItWorks from "@/components/HowItWorks";
 import Industries from "@/components/Industries";
 import BuiltInHouse from "@/components/BuiltInHouse";
@@ -17,6 +18,7 @@ const Index = () => {
       <Hero />
       <StatsBand />
       <WhatWeDo />
+      <SystemArchitecture />
       <HowItWorks />
       <Industries />
       <BuiltInHouse />

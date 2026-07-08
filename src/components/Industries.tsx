@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/motion/Reveal";
-import { GitBranch, Trash2 } from "lucide-react";
-import { Factory } from "lucide-react";
+import { GitBranch, Trash2, Factory } from "lucide-react";
 
 const roadmap = [
   { icon: GitBranch, name: "Pipeline Corridors" },
@@ -10,15 +9,15 @@ const roadmap = [
 const Industries = () => {
   return (
     <section id="industries" className="py-24 md:py-32 bg-sand">
-      <div className="max-w-5xl mx-auto px-6">
-        <Reveal className="max-w-2xl mb-14">
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal className="max-w-3xl mb-12">
           <p className="text-gold text-xs font-semibold uppercase tracking-[0.28em] mb-4">Industries</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-navy leading-[1.08]">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold text-navy leading-[1.08] mb-5">
             Built for refineries &amp; gas-processing plants.
           </h2>
-          <p className="text-muted-foreground text-base mt-5 leading-relaxed">
-            Phase 1 is intentionally narrow: large, methane-relevant industrial sites in Saudi Arabia's Eastern Province,
-            where manual and helicopter-based inspection is costly or too infrequent.
+          <p className="text-muted-foreground text-base leading-relaxed">
+            Phase 1 is intentionally narrow: large, methane-relevant industrial sites in Saudi Arabia's Eastern
+            Province, where manual and helicopter-based inspection is costly or too infrequent.
           </p>
         </Reveal>
 

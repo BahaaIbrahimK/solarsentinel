@@ -68,6 +68,38 @@ export const RepairIcon = ({ className }: IconProps) => (
   </svg>
 );
 
+export const SolarPanelIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} fill={base} stroke={stroke} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="5" width="18" height="10" rx="1" />
+    <path d="M3 8.3h18M3 11.6h18M9 5v10M15 5v10" />
+    <path d="M12 15v4M9 19h6" />
+  </svg>
+);
+
+export const BatteryIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} fill={base} stroke={stroke} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="7" width="16" height="10" rx="2" />
+    <path d="M21 10.5v3" />
+    <path d="M11 9.5 9 12.2h3L10 15" />
+  </svg>
+);
+
+export const ChipIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} fill={base} stroke={stroke} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round">
+    <rect x="7" y="7" width="10" height="10" rx="1.5" />
+    <path d="M10.5 10.5h3v3h-3z" />
+    <path d="M9.5 4v3M14.5 4v3M9.5 17v3M14.5 17v3M4 9.5h3M4 14.5h3M17 9.5h3M17 14.5h3" />
+  </svg>
+);
+
+export const BroadcastIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" className={className} fill={base} stroke={stroke} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="2" />
+    <path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7" />
+    <path d="M6 6a8 8 0 0 0 0 12M18 6a8 8 0 0 1 0 12" />
+  </svg>
+);
+
 export const ScopeIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 24 24" className={className} fill={base} stroke={stroke} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="8" />

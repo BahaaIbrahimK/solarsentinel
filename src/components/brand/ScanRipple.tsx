@@ -3,7 +3,7 @@
  * echoing the ripples under the wing in the logo. Represents "sensing the invisible."
  */
 export const ScanRipple = ({ className = "", color = "hsl(var(--gold))", dot = false }: { className?: string; color?: string; dot?: boolean }) => (
-  <div className={`relative ${className}`} aria-hidden="true">
+  <div className={className} aria-hidden="true">
     <div className="absolute inset-0 flex items-center justify-center">
       {[0, 1, 2].map((i) => (
         <span
