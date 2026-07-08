@@ -1,40 +1,61 @@
-import { useFadeIn } from "@/hooks/useFadeIn";
-import { Factory, GitBranch, Droplets, Trash2, Wind } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
+import { GitBranch, Trash2 } from "lucide-react";
+import { Factory } from "lucide-react";
 
-const industries = [
-  { icon: Factory, name: "Oil & Gas Refineries", text: "Monitor large facilities for methane leaks, emissions hotspots, and inspection support." },
-  { icon: GitBranch, name: "Pipelines", text: "Segment long pipeline corridors for recurring aerial inspection and anomaly detection." },
-  { icon: Droplets, name: "Oil Spill Monitoring", text: "Detect and localize surface oil contamination across industrial zones and sensitive areas." },
-  { icon: Trash2, name: "Landfills", text: "Monitor methane emissions and support recurring environmental compliance workflows." },
-  { icon: Wind, name: "Air Quality", text: "Map pollutants and support urban or industrial air-quality assessment programs." },
+const roadmap = [
+  { icon: GitBranch, name: "Pipeline Corridors" },
+  { icon: Trash2, name: "Landfills" },
 ];
 
 const Industries = () => {
-  const fade = useFadeIn();
-
   return (
-    <section id="industries" className="py-28 bg-navy">
-      <div className="max-w-6xl mx-auto px-6" ref={fade.ref}>
-        <div className={fade.className}>
-          <div className="text-center mb-16">
-            <h2 className="section-label text-gold mx-auto">Industries</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-primary-foreground mt-4 leading-snug">
-              Industries We Serve
-            </h3>
-          </div>
+    <section id="industries" className="py-24 md:py-32 bg-sand">
+      <div className="max-w-5xl mx-auto px-6">
+        <Reveal className="max-w-2xl mb-14">
+          <p className="text-gold text-xs font-semibold uppercase tracking-[0.28em] mb-4">Industries</p>
+          <h2 className="font-display text-3xl md:text-5xl font-semibold text-navy leading-[1.08]">
+            Built for refineries &amp; gas-processing plants.
+          </h2>
+          <p className="text-muted-foreground text-base mt-5 leading-relaxed">
+            Phase 1 is intentionally narrow: large, methane-relevant industrial sites in Saudi Arabia's Eastern Province,
+            where manual and helicopter-based inspection is costly or too infrequent.
+          </p>
+        </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-            {industries.map((ind, i) => (
-              <div key={i} className="group bg-primary-foreground/[0.04] border border-primary-foreground/10 rounded-2xl p-8 hover:bg-primary-foreground/[0.08] transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5">
-                  <ind.icon className="w-5 h-5 text-gold" />
-                </div>
-                <h4 className="font-bold text-primary-foreground text-base mb-2">{ind.name}</h4>
-                <p className="text-primary-foreground/50 text-sm leading-relaxed">{ind.text}</p>
+        <Reveal delay={0.1}>
+          <div className="relative rounded-3xl bg-navy p-8 md:p-12 overflow-hidden mb-8">
+            <div className="absolute inset-0 dot-grid opacity-30" />
+            <div className="relative flex items-start gap-6">
+              <div className="w-14 h-14 rounded-2xl bg-gold flex items-center justify-center shrink-0 text-navy">
+                <Factory className="w-7 h-7" />
               </div>
-            ))}
+              <div>
+                <h3 className="font-display font-semibold text-primary-foreground text-xl md:text-2xl mb-3">
+                  Oil &amp; gas refineries and gas-processing plants
+                </h3>
+                <p className="text-primary-foreground/60 text-base leading-relaxed max-w-2xl">
+                  Recurring methane screening, source localization, and repair verification for large, distributed
+                  industrial footprints — designed for operations, integrity, and emissions teams that need frequent,
+                  quantified coverage.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <span className="text-muted-foreground text-xs font-semibold uppercase tracking-[0.2em]">On the roadmap</span>
+            <div className="flex flex-wrap gap-3">
+              {roadmap.map((r, i) => (
+                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-dashed border-navy/25 text-navy/60 text-sm bg-card/50">
+                  <r.icon className="w-4 h-4" />
+                  {r.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

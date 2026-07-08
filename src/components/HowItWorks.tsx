@@ -1,45 +1,65 @@
-import { useFadeIn } from "@/hooks/useFadeIn";
-import { MapPin, Plane, Search, FileText, RefreshCw } from "lucide-react";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
+import { ScopeIcon, UAVIcon, MethaneIcon, ReportIcon } from "@/components/brand/icons";
+import { Check } from "lucide-react";
 
 const steps = [
-  { icon: MapPin, label: "Mission Planning", sub: "Site or corridor scoping" },
-  { icon: Plane, label: "Aerial Data Collection", sub: "Autonomous flight operations" },
-  { icon: Search, label: "Detection & Analysis", sub: "Sensor-based processing" },
-  { icon: FileText, label: "Geotagged Reporting", sub: "Results delivered for review" },
-  { icon: RefreshCw, label: "Repeat Monitoring", sub: "Recurring operations" },
+  { Icon: ScopeIcon, label: "Scope the site", sub: "Define the flight path and monitoring objective." },
+  { Icon: UAVIcon, label: "Autonomous survey", sub: "The solar UAV flies a planned methane-screening mission." },
+  { Icon: MethaneIcon, label: "Detect & prioritize", sub: "Onboard AI flags likely sources and estimates severity." },
+  { Icon: ReportIcon, label: "Report & verify", sub: "Geotagged outputs delivered, with optional repair verification." },
+];
+
+const deliverables = [
+  "Recurring methane monitoring",
+  "Source localization",
+  "Quantified emission estimates",
+  "Automated geotagged reports",
+  "Optional repair verification",
 ];
 
 const HowItWorks = () => {
-  const fade = useFadeIn();
-
   return (
-    <section id="how-it-works" className="py-28 bg-navy">
-      <div className="max-w-5xl mx-auto px-6" ref={fade.ref}>
-        <div className={fade.className}>
-          <div className="text-center mb-16">
-            <h2 className="section-label text-gold mx-auto">Process</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-primary-foreground mt-4 leading-snug">
-              How It Works
-            </h3>
-          </div>
+    <section id="how-it-works" className="py-24 md:py-32 bg-background">
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal className="max-w-2xl mb-16">
+          <p className="text-gold text-xs font-semibold uppercase tracking-[0.28em] mb-4">How It Works</p>
+          <h2 className="font-display text-3xl md:text-5xl font-semibold text-navy leading-[1.08]">
+            A recurring service, built for industrial operators.
+          </h2>
+        </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-6">
-            {steps.map((step, i) => (
-              <div key={i} className="flex flex-col items-center text-center">
-                <div className="relative mb-5">
-                  <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center">
-                    <step.icon className="w-7 h-7 text-gold" />
+        <Stagger className="grid md:grid-cols-4 gap-8 md:gap-6 relative mb-20">
+          {steps.map((s, i) => (
+            <StaggerItem key={i}>
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-14 h-14 rounded-2xl bg-navy flex items-center justify-center text-gold shrink-0">
+                    <s.Icon className="w-7 h-7" />
                   </div>
-                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gold text-navy text-xs font-bold flex items-center justify-center">
-                    {i + 1}
-                  </span>
+                  <span className="font-display text-4xl font-semibold text-sand-deep">{String(i + 1).padStart(2, "0")}</span>
                 </div>
-                <span className="text-primary-foreground font-semibold text-sm mb-1">{step.label}</span>
-                <span className="text-primary-foreground/40 text-xs">{step.sub}</span>
+                <h3 className="font-display font-semibold text-navy text-lg mb-2">{s.label}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{s.sub}</p>
               </div>
-            ))}
+            </StaggerItem>
+          ))}
+        </Stagger>
+
+        <Reveal>
+          <div className="rounded-3xl bg-navy p-8 md:p-12">
+            <p className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-6">Every engagement delivers</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-4">
+              {deliverables.map((d, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <span className="w-5 h-5 rounded-full bg-gold/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-gold" />
+                  </span>
+                  <span className="text-primary-foreground/80 text-sm leading-snug">{d}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

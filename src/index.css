@@ -41,6 +41,8 @@
     --green: 150 58% 28%;
     --slate: 215 16% 47%;
     --light-gray: 210 14% 96%;
+    --sand: 36 34% 94%;
+    --sand-deep: 34 28% 88%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -124,4 +126,46 @@
 .dot-grid {
   background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1.5px, transparent 1.5px);
   background-size: 28px 28px;
+}
+
+/* Display type */
+.font-display {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Signature scan-ripple — the "sensing the invisible" motif from the logo */
+@keyframes scan-ripple {
+  0%   { transform: scale(0.35); opacity: 0.65; }
+  70%  { opacity: 0.12; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+.scan-ring {
+  animation: scan-ripple 3s ease-out infinite;
+}
+.scan-ring:nth-child(2) { animation-delay: 1s; }
+.scan-ring:nth-child(3) { animation-delay: 2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-ring { animation: none; opacity: 0.25; }
+}
+
+/* Hero scroll cue */
+@keyframes scroll-cue {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.3; }
+  50%      { transform: scaleY(1); opacity: 1; }
+}
+.scroll-cue {
+  transform-origin: top;
+  animation: scroll-cue 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue { animation: none; opacity: 0.6; }
+}
+
+/* Subtle grain/warmth on light sections */
+.warm-grid {
+  background-image: linear-gradient(hsl(var(--navy) / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--navy) / 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
