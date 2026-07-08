@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import logo from "@/assets/logo-dark.png";
 import heroBg from "@/assets/hero-refinery-wide.jpg";
 import { ScanRipple } from "@/components/brand/ScanRipple";
 
@@ -29,11 +28,6 @@ const Hero = () => {
       <ScanRipple className="absolute top-[24%] left-1/2 -translate-x-1/2 w-[520px] h-[520px] opacity-40 pointer-events-none" />
 
       <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <motion.img
-          src={logo} alt="SolarSentinel" className="h-16 md:h-20 w-auto mx-auto mb-10"
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}
-        />
-
         <motion.p
           className="text-gold text-xs md:text-sm font-semibold tracking-[0.32em] uppercase mb-6"
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease }}
