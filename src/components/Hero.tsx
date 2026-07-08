@@ -54,11 +54,10 @@ const Hero = () => {
         </h1>
 
         <motion.p
-          className="text-primary-foreground/55 text-base md:text-lg max-w-[600px] mx-auto mb-10 leading-relaxed font-light"
+          className="text-primary-foreground/70 text-lg md:text-xl max-w-[520px] mx-auto mb-10 leading-relaxed"
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5, ease }}
         >
-          A high-endurance solar UAV service for frequent methane screening, source localization, and
-          repair verification — built for refineries and gas plants across Saudi Arabia.
+          Frequent, quantified methane monitoring for refineries and gas plants — powered by the sun.
         </motion.p>
 
         <motion.div
@@ -81,9 +80,7 @@ const Hero = () => {
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 1 }}
       >
         <span className="text-primary-foreground/40 text-[10px] uppercase tracking-[0.25em]">Scroll</span>
-        <motion.div className="w-px h-8 bg-gradient-to-b from-gold to-transparent"
-          animate={{ scaleY: [0.4, 1, 0.4], opacity: [0.3, 1, 0.3] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          style={{ transformOrigin: "top" }} />
+        <div className="scroll-cue w-px h-8 bg-gradient-to-b from-gold to-transparent" />
       </motion.div>
     </section>
   );

@@ -2,9 +2,10 @@ import logoDark from "@/assets/logo-dark.png";
 
 const footerLinks = [
   { label: "What We Do", href: "#what-we-do" },
+  { label: "How It Works", href: "#how-it-works" },
   { label: "Industries", href: "#industries" },
-  { label: "Platform", href: "#platform" },
-  { label: "Solutions", href: "#solutions" },
+  { label: "Manufacturing", href: "#built-in-house" },
+  { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -15,7 +16,7 @@ const Footer = () => {
         <div className="text-center md:text-left">
           <img src={logoDark} alt="SolarSentinel" className="h-10 w-auto mx-auto md:mx-0" style={{ maxWidth: 180 }} />
           <p className="text-primary-foreground/30 text-sm mt-3 max-w-[260px]">
-            Autonomous aerial monitoring for industrial & environmental operations
+            Solar-powered aerial methane monitoring for refineries and gas plants
           </p>
           <p className="text-primary-foreground/20 text-xs mt-1">contact@solarsentinelco.com</p>
         </div>

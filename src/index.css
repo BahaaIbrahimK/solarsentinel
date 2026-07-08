@@ -150,6 +150,19 @@
   .scan-ring { animation: none; opacity: 0.25; }
 }
 
+/* Hero scroll cue */
+@keyframes scroll-cue {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.3; }
+  50%      { transform: scaleY(1); opacity: 1; }
+}
+.scroll-cue {
+  transform-origin: top;
+  animation: scroll-cue 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue { animation: none; opacity: 0.6; }
+}
+
 /* Subtle grain/warmth on light sections */
 .warm-grid {
   background-image: linear-gradient(hsl(var(--navy) / 0.03) 1px, transparent 1px),

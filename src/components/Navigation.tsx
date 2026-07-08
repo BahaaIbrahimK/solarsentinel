@@ -4,11 +4,10 @@ import logoDark from "@/assets/logo-dark.png";
 
 const navLinks = [
   { label: "What We Do", href: "#what-we-do" },
+  { label: "How It Works", href: "#how-it-works" },
   { label: "Industries", href: "#industries" },
-  { label: "Platform", href: "#platform" },
-  { label: "Solutions", href: "#solutions" },
+  { label: "Manufacturing", href: "#built-in-house" },
   { label: "Team", href: "#team" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const Navigation = () => {
@@ -63,7 +62,7 @@ const Navigation = () => {
             </a>
           ))}
           <a href="#contact" className="ml-4 px-6 py-2.5 bg-gold text-navy text-[13px] font-semibold rounded-lg hover:brightness-110 transition tracking-wide">
-            Request Demo
+            Request a Pilot
           </a>
         </div>
 
@@ -83,7 +82,7 @@ const Navigation = () => {
             ))}
             <a href="#contact" onClick={() => setMobileOpen(false)}
               className="px-5 py-2.5 bg-gold text-navy text-sm font-semibold rounded-lg text-center">
-              Request Demo
+              Request a Pilot
             </a>
           </div>
         </div>
