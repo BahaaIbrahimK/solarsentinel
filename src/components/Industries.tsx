@@ -7,42 +7,59 @@ const roadmap = [
   { icon: Trash2, name: "Landfills" },
 ];
 
-// stylised site markers within the coverage panel (x%, y%)
+// Saudi Arabia outline (stylised, recognisable) — viewBox 400x340
+const SAUDI = "M150,40 L250,32 L292,56 L300,80 L297,104 L303,118 L305,118 L309,152 L313,118 L322,126 L342,160 L351,206 L322,240 L270,270 L212,284 L176,276 L152,206 L141,140 L146,84 Z";
+// Eastern Province highlight (east strip hugging the Gulf)
+const EASTERN = "M292,56 L300,80 L297,104 L303,118 L309,152 L313,118 L322,126 L342,160 L351,206 L322,240 L316,150 L305,90 Z";
+
+// site markers positioned over the Eastern Province, in SVG coords (viewBox 400x340)
 const sites = [
-  { x: 62, y: 30, big: true },
-  { x: 74, y: 46, big: false },
-  { x: 55, y: 52, big: false },
-  { x: 68, y: 66, big: false },
-  { x: 48, y: 38, big: false },
+  { x: 311, y: 120, big: true },
+  { x: 327, y: 158, big: false },
+  { x: 301, y: 98, big: false },
+  { x: 330, y: 198, big: false },
+  { x: 317, y: 172, big: false },
 ];
 
 const CoveragePanel = () => (
   <div className="relative aspect-[4/3] rounded-3xl bg-navy overflow-hidden border border-primary-foreground/10">
-    <div className="absolute inset-0 warm-grid opacity-[0.12]" style={{ filter: "invert(1)" }} />
-    {/* suggested Gulf coastline */}
-    <svg viewBox="0 0 400 300" preserveAspectRatio="none" className="absolute inset-0 w-full h-full" fill="none">
-      <path d="M400,20 C330,60 350,120 320,150 C300,175 330,220 300,300"
-        stroke="hsl(var(--gold) / 0.25)" strokeWidth="1.5" />
-      <path d="M0,0 L400,0 L400,300 L0,300 Z" stroke="none" fill="url(#sea)" opacity="0.0" />
-      {/* faint survey routes */}
-      <path d="M190,115 C230,150 250,140 296,90 C250,160 220,190 272,200 C210,175 200,150 220,110"
-        stroke="hsl(var(--primary-foreground) / 0.15)" strokeWidth="1" strokeDasharray="3 4" />
+    <div className="absolute inset-0 warm-grid opacity-[0.10]" style={{ filter: "invert(1)" }} />
+
+    <svg viewBox="0 0 400 340" className="absolute inset-0 w-full h-full">
+      {/* Arabian Gulf hint (east of the country) */}
+      <path d="M300,50 C340,80 365,130 355,190 C350,235 365,275 345,330 L400,330 L400,30 Z"
+        fill="hsl(var(--gold) / 0.05)" />
+      {/* country body */}
+      <path d={SAUDI} fill="hsl(var(--primary-foreground) / 0.06)" stroke="hsl(var(--primary-foreground) / 0.25)" strokeWidth="1.5" strokeLinejoin="round" />
+      {/* eastern province highlight */}
+      <path d={EASTERN} fill="hsl(var(--gold) / 0.12)" stroke="hsl(var(--gold) / 0.5)" strokeWidth="1.2" strokeLinejoin="round" />
+      {/* faint survey routes over the eastern province */}
+      <path d="M311,120 C330,140 326,160 301,150 C325,170 332,185 327,158" fill="none"
+        stroke="hsl(var(--primary-foreground) / 0.2)" strokeWidth="1" strokeDasharray="3 4" />
+      {/* site dots */}
+      {sites.map((s, i) => (
+        <g key={i}>
+          <circle cx={s.x} cy={s.y} r={s.big ? 4 : 3} fill="hsl(var(--gold))" />
+        </g>
+      ))}
     </svg>
 
-    {/* site markers with sensing ripples */}
+    {/* pulsing sensing ripples over the sites (HTML overlay, % of panel) */}
     {sites.map((s, i) => (
-      <div key={i} className="absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `${s.x}%`, top: `${s.y}%` }}>
-        <ScanRipple className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${s.big ? "w-24 h-24" : "w-16 h-16"} opacity-70`} />
-        <span className={`relative block rounded-full bg-gold ${s.big ? "w-3 h-3" : "w-2 h-2"}`}
-          style={{ boxShadow: "0 0 10px hsl(var(--gold))" }} />
+      <div key={i} className="absolute -translate-x-1/2 -translate-y-1/2"
+        style={{ left: `${(s.x / 400) * 100}%`, top: `${(s.y / 340) * 100}%` }}>
+        <ScanRipple className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${s.big ? "w-20 h-20" : "w-14 h-14"} opacity-70`} />
       </div>
     ))}
 
     <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-wider text-primary-foreground/50">
-      Eastern Province · KSA
+      Kingdom of Saudi Arabia
     </div>
-    <div className="absolute bottom-4 left-4 font-mono text-[10px] text-primary-foreground/40">
-      11 sites · 3 refineries + 8 gas facilities
+    <div className="absolute bottom-4 left-4 font-mono text-[10px] text-gold/70">
+      Eastern Province · 11 sites
+    </div>
+    <div className="absolute bottom-4 right-4 font-mono text-[9px] text-primary-foreground/35">
+      3 refineries + 8 gas facilities
     </div>
   </div>
 );
