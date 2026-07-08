@@ -163,6 +163,43 @@
   .scroll-cue { animation: none; opacity: 0.6; }
 }
 
+/* Data-flow dots travelling along architecture connectors */
+@keyframes flow-x {
+  0%   { left: 0%;   opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+.flow-dot {
+  position: absolute;
+  top: 50%;
+  width: 6px; height: 6px;
+  margin-top: -3px;
+  border-radius: 9999px;
+  background: hsl(var(--gold));
+  box-shadow: 0 0 8px hsl(var(--gold));
+  animation: flow-x 2.6s linear infinite;
+}
+@keyframes flow-y {
+  0%   { top: 0%;   opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+.flow-dot-y {
+  position: absolute;
+  left: 50%;
+  width: 6px; height: 6px;
+  margin-left: -3px;
+  border-radius: 9999px;
+  background: hsl(var(--gold));
+  box-shadow: 0 0 8px hsl(var(--gold));
+  animation: flow-y 2.6s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow-dot, .flow-dot-y { animation: none; opacity: 0.6; left: 50%; top: 50%; }
+}
+
 /* Subtle grain/warmth on light sections */
 .warm-grid {
   background-image: linear-gradient(hsl(var(--navy) / 0.03) 1px, transparent 1px),

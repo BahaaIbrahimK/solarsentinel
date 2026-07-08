@@ -2,11 +2,11 @@ import logoDark from "@/assets/logo-dark.png";
 
 const footerLinks = [
   { label: "What We Do", href: "#what-we-do" },
+  { label: "Technology", href: "#architecture" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Industries", href: "#industries" },
   { label: "Manufacturing", href: "#built-in-house" },
   { label: "Team", href: "#team" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const Footer = () => {
