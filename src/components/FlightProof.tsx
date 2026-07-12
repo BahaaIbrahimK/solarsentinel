@@ -18,7 +18,7 @@ const FlightProof = () => {
               Real hardware. Real flight hours.
             </h2>
             <p className="text-navy/70 text-base md:text-lg max-w-xl mx-auto">
-              Designed, built, and flown by our own team in Dhahran — from raw materials to a flight-tested solar UAV.
+              Designed, built, and flown by our own team in Dhahran, from raw materials to a flight-tested solar UAV.
             </p>
           </Reveal>
 

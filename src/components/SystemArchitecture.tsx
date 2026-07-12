@@ -37,8 +37,8 @@ const SystemArchitecture = () => {
             Sun in. Methane intelligence out.
           </h2>
           <p className="text-primary-foreground/50 text-base mt-5 leading-relaxed">
-            An integrated power, sensing, and AI stack — engineered so a single aircraft can fly for hours and turn
-            raw signal into actionable reports, onboard.
+            An integrated power, sensing, and AI stack, engineered so a single aircraft can fly for hours and turn
+            raw signal into actionable reports onboard.
           </p>
         </Reveal>
 

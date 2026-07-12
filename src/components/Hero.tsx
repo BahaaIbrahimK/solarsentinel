@@ -51,7 +51,7 @@ const Hero = () => {
           className="text-primary-foreground/70 text-lg md:text-xl max-w-[520px] mx-auto mb-10 leading-relaxed"
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5, ease }}
         >
-          Frequent, quantified methane monitoring for refineries and gas plants — powered by the sun.
+          Frequent, quantified methane monitoring for refineries and gas plants, powered by the sun.
         </motion.p>
 
         <motion.div

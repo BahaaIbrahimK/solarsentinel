@@ -7,11 +7,11 @@ import frame6 from "@/assets/Frame6.jpg";
 import frame8 from "@/assets/Frame8.jpg";
 
 const steps = [
-  { img: frame1, title: "Every component, accounted for", text: "Carbon spars, 3D-printed ribs, solar cells, and avionics — laid out before a single wing goes together." },
+  { img: frame1, title: "Every component, accounted for", text: "Carbon spars, 3D-printed ribs, solar cells, and avionics, laid out before a single wing goes together." },
   { img: frame3, title: "Structural assembly", text: "Carbon-fiber spars (22 mm OD) form the lightweight backbone of each wing." },
   { img: frame5, title: "Threading the ribs", text: "Topology-optimized, 3D-printed ribs are fitted along the spar for strength at minimum weight." },
   { img: frame6, title: "The wing takes shape", text: "Covering film seals the structure ahead of final assembly and integration." },
-  { img: frame8, title: "Ready to fly", text: "A finished airframe — built in-house from raw materials — carried out for flight testing." },
+  { img: frame8, title: "Ready to fly", text: "A finished airframe, built in-house from raw materials and carried out for flight testing." },
 ];
 
 const N = steps.length;
