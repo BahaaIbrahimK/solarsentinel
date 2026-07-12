@@ -1,38 +1,75 @@
 import logoDark from "@/assets/logo-dark.png";
 
-const footerLinks = [
-  { label: "What We Do", href: "#what-we-do" },
-  { label: "Technology", href: "#architecture" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Industries", href: "#industries" },
-  { label: "Manufacturing", href: "#built-in-house" },
-  { label: "Team", href: "#team" },
+const columns = [
+  {
+    title: "Explore",
+    links: [
+      { label: "What We Do", href: "#what-we-do" },
+      { label: "Technology", href: "#architecture" },
+      { label: "How It Works", href: "#how-it-works" },
+      { label: "Industries", href: "#industries" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "Manufacturing", href: "#built-in-house" },
+      { label: "Team", href: "#team" },
+      { label: "Request a Pilot", href: "#contact" },
+    ],
+  },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-navy" style={{ borderTop: "1px solid hsl(var(--gold) / 0.2)" }}>
-      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
-        <div className="text-center md:text-left">
-          <img src={logoDark} alt="SolarSentinel" className="h-10 w-auto mx-auto md:mx-0" style={{ maxWidth: 180 }} />
-          <p className="text-primary-foreground/30 text-sm mt-3 max-w-[260px]">
-            Solar-powered aerial methane monitoring for refineries and gas plants
-          </p>
-          <p className="text-primary-foreground/20 text-xs mt-1">contact@solarsentinelco.com</p>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-6">
-          {footerLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-primary-foreground/40 hover:text-primary-foreground text-sm transition-colors">
-              {link.label}
+    <footer className="bg-navy">
+      {/* Statement + links */}
+      <div className="max-w-6xl mx-auto px-6 pt-20 pb-14">
+        <div className="grid lg:grid-cols-2 gap-12">
+          <div>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-primary-foreground leading-[1.1] max-w-md">
+              Sensing the invisible, from the sky.
+            </h2>
+            <a href="#contact"
+              className="inline-flex items-center gap-2 mt-8 px-7 py-3.5 bg-gold text-navy font-semibold rounded-full hover:brightness-105 transition text-sm tracking-wide">
+              Request a Pilot <span>→</span>
             </a>
-          ))}
-        </div>
+          </div>
 
-        <p className="text-primary-foreground/20 text-sm text-center md:text-right max-w-[240px]">
-          © 2026 SolarSentinel.
-          <br />KFUPM, Dhahran, Saudi Arabia.
-        </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+            {columns.map((col) => (
+              <div key={col.title}>
+                <p className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-4">{col.title}</p>
+                <ul className="space-y-3">
+                  {col.links.map((l) => (
+                    <li key={l.href}>
+                      <a href={l.href} className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                        {l.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <div>
+              <p className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-4">Contact</p>
+              <ul className="space-y-3 text-sm text-primary-foreground/60">
+                <li><a href="mailto:contact@solarsentinelco.com" className="hover:text-primary-foreground transition-colors break-all">contact@solarsentinelco.com</a></li>
+                <li>IRC-ASE, KFUPM<br />Dhahran, Saudi Arabia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-primary-foreground/10">
+        <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <img src={logoDark} alt="SolarSentinel" className="h-9 w-auto" style={{ maxWidth: 170 }} />
+          <p className="text-primary-foreground/35 text-xs text-center md:text-right">
+            © 2026 SolarSentinel · Solar-Powered Aerial Methane Monitoring
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -12,7 +12,7 @@ const WhySolarSentinel = () => {
             The best fit for frequent, large-site methane screening.
           </h2>
           <p className="text-muted-foreground text-base mt-5 leading-relaxed">
-            Not a replacement for every LDAR method — the right tool where current approaches are fragmented or costly.
+            Not a replacement for every LDAR method. It is the right tool where current approaches are fragmented or costly.
           </p>
         </Reveal>
 
@@ -27,7 +27,7 @@ const WhySolarSentinel = () => {
                 </div>
                 <h3 className="font-display text-2xl font-semibold text-primary-foreground mb-3">Methane-specific sensing</h3>
                 <p className="text-primary-foreground/60 text-base leading-relaxed max-w-md">
-                  TDLAS detects methane directly — not a proxy signal — for higher confidence than optical-gas-imaging or
+                  TDLAS detects methane directly, not a proxy signal, for higher confidence than optical gas imaging or
                   standard drone payloads.
                 </p>
               </div>
@@ -42,7 +42,7 @@ const WhySolarSentinel = () => {
               </div>
               <h3 className="font-display text-xl font-semibold text-navy mb-2">Zero-emission by design</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Solar power removes fuel and major operating costs — aligned with decarbonization goals.
+                Solar power removes fuel and major operating costs, aligned with decarbonization goals.
               </p>
             </div>
           </StaggerItem>
@@ -55,7 +55,7 @@ const WhySolarSentinel = () => {
               </div>
               <h3 className="font-display text-xl font-semibold text-navy mb-2">Large-site coverage</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                High endurance means fewer mission resets — built for recurring, site-scale screening.
+                High endurance means fewer mission resets, built for recurring, site-scale screening.
               </p>
             </div>
           </StaggerItem>
@@ -69,7 +69,7 @@ const WhySolarSentinel = () => {
               <div>
                 <h3 className="font-display text-xl font-semibold text-navy mb-2">Repeatable &amp; verifiable</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed max-w-lg">
-                  A recurring service model with optional post-repair verification — proof the leak was found and fixed,
+                  A recurring service model with optional post-repair verification. Proof the leak was found and fixed,
                   survey after survey.
                 </p>
               </div>

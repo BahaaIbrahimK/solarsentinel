@@ -206,3 +206,11 @@
     linear-gradient(90deg, hsl(var(--navy) / 0.03) 1px, transparent 1px);
   background-size: 64px 64px;
 }
+
+/* Blueprint grid for the technical schematic */
+.blueprint-grid {
+  background-image:
+    linear-gradient(hsl(var(--gold) / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--gold) / 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}

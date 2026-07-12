@@ -66,7 +66,7 @@ const Team = () => {
             <div className="border border-border rounded-2xl p-6 flex items-center gap-5 bg-card">
               <img src={aiaa} alt="AIAA" className="h-10 w-auto shrink-0" />
               <div>
-                <p className="font-display font-semibold text-navy text-sm">AIAA SciTech 2026 — Accepted</p>
+                <p className="font-display font-semibold text-navy text-sm">AIAA SciTech 2026 · Accepted</p>
                 <p className="text-muted-foreground text-xs mt-0.5 leading-relaxed">
                   Peer-reviewed validation of the structural optimization, solar-power integration, and AI detection methodology.
                 </p>
@@ -75,7 +75,7 @@ const Team = () => {
             <div className="border border-border rounded-2xl p-6 flex items-center gap-5 bg-card">
               <img src={rdia} alt="RDIA" className="h-10 w-auto shrink-0" />
               <div>
-                <p className="font-display font-semibold text-navy text-sm">RDIA — Acknowledged</p>
+                <p className="font-display font-semibold text-navy text-sm">RDIA · Acknowledged</p>
                 <p className="text-muted-foreground text-xs mt-0.5 leading-relaxed">
                   Recognized by Saudi Arabia's Research, Development &amp; Innovation Authority, aligned with Vision 2030.
                 </p>

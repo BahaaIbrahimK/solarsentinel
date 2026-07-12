@@ -37,7 +37,7 @@ const Contact = () => {
               Talk to us about your site.
             </h2>
             <p className="text-primary-foreground/50 text-base max-w-md mx-auto">
-              Refinery or gas-plant operator, partner, or investor — let's discuss how SolarSentinel can help.
+              Refinery or gas-plant operator, partner, or investor? Let's discuss how SolarSentinel can help.
             </p>
           </div>
         </Reveal>
@@ -46,7 +46,7 @@ const Contact = () => {
           {submitted ? (
             <div className="bg-primary-foreground/[0.06] border border-primary-foreground/10 rounded-2xl p-12 text-center">
               <p className="text-gold text-xl font-semibold mb-2 font-display">Almost there</p>
-              <p className="text-primary-foreground/50">Your email client should now be open with your message ready — hit send to reach us.</p>
+              <p className="text-primary-foreground/50">Your email client should now be open with your message ready. Just hit send to reach us.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">

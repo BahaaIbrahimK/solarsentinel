@@ -34,7 +34,7 @@ const Industries = () => {
                 </h3>
                 <p className="text-primary-foreground/60 text-base leading-relaxed max-w-2xl">
                   Recurring methane screening, source localization, and repair verification for large, distributed
-                  industrial footprints — designed for operations, integrity, and emissions teams that need frequent,
+                  industrial footprints, designed for operations, integrity, and emissions teams that need frequent,
                   quantified coverage.
                 </p>
               </div>

@@ -12,7 +12,7 @@ const rows = [
     Icon: SolarWingIcon,
     kicker: "The Platform",
     title: "A high-endurance solar UAV",
-    text: "6+ hours of flight-tested endurance means one aircraft screens an entire refinery in a single mission — no battery swaps, no mission resets. Powered by the sun, it flies with a near-zero operational footprint.",
+    text: "6+ hours of flight-tested endurance means one aircraft screens an entire refinery in a single mission, with no battery swaps and no resets. Powered by the sun, it flies with a near-zero operational footprint.",
     stats: [
       { v: "6+ hrs", l: "Endurance" },
       { v: "4.0 m", l: "Wingspan" },
@@ -25,7 +25,7 @@ const rows = [
     Icon: LaserSensorIcon,
     kicker: "The Sensor",
     title: "TDLAS methane sensing",
-    text: "A high-precision tunable-diode laser detects methane specifically — not a proxy signal — from altitudes up to 100 m. It sees leaks the eye and standard cameras miss, across large, distributed sites.",
+    text: "A high-precision tunable-diode laser detects methane specifically, not a proxy signal, from altitudes up to 100 m. It sees leaks the eye and standard cameras miss, across large, distributed sites.",
     stats: [
       { v: "100 m", l: "Sensing altitude" },
       { v: "TDLAS", l: "Methane-specific" },
@@ -38,7 +38,7 @@ const rows = [
     Icon: MethaneIcon,
     kicker: "The Intelligence",
     title: "Onboard AI & automated reporting",
-    text: "Detection, source localization, and emission estimation run onboard during flight. Operators receive automated, geotagged maps and quantified emission estimates — ready for integrity teams and compliance.",
+    text: "Detection, source localization, and emission estimation run onboard during flight. Operators receive automated, geotagged maps and quantified emission estimates, ready for integrity teams and compliance.",
     stats: [
       { v: "In-flight", l: "Processing" },
       { v: "Geotagged", l: "Reports" },
