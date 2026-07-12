@@ -6,6 +6,7 @@ import SystemArchitecture from "@/components/SystemArchitecture";
 import HowItWorks from "@/components/HowItWorks";
 import Industries from "@/components/Industries";
 import BuiltInHouse from "@/components/BuiltInHouse";
+import FlightProof from "@/components/FlightProof";
 import WhySolarSentinel from "@/components/WhySolarSentinel";
 import Team from "@/components/Team";
 import Contact from "@/components/Contact";
@@ -22,6 +23,7 @@ const Index = () => {
       <HowItWorks />
       <Industries />
       <BuiltInHouse />
+      <FlightProof />
       <WhySolarSentinel />
       <Team />
       <Contact />
