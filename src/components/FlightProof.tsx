@@ -33,10 +33,18 @@ const FlightProof = () => {
         </div>
       </div>
 
-      {/* Full-bleed real flight photo */}
+      {/* Full-bleed real flight footage — plays when a video file is present,
+          otherwise the real flight photo shows as the poster. Drop the file at
+          public/flight-testing.mp4 and it plays automatically (muted, looped). */}
       <div className="relative h-[56vh] min-h-[380px] overflow-hidden">
-        <img src={uavBeach} alt="SolarSentinel solar UAV in flight over the Arabian Gulf" loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover" />
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          poster={uavBeach}
+          autoPlay muted loop playsInline preload="none"
+          aria-label="SolarSentinel solar UAV in flight over the Arabian Gulf"
+        >
+          <source src="/flight-testing.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, hsl(var(--navy)/0.7) 100%)" }} />
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
           <div className="max-w-6xl mx-auto flex items-end justify-between gap-4">
