@@ -2,8 +2,9 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import uavBeach from "@/assets/uav-beach.jpg";
 
 const proof = [
-  { v: "2", l: "Full-scale prototypes built" },
+  { v: "3", l: "Full-scale UAVs built" },
   { v: "Flight-tested", l: "Real hardware, not renderings" },
+  { v: "219 t", l: "CH₄ avoided per repaired leak / yr" },
   { v: "AIAA 2026", l: "Peer-reviewed & accepted" },
 ];
 
@@ -22,7 +23,7 @@ const FlightProof = () => {
             </p>
           </Reveal>
 
-          <Stagger className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
+          <Stagger className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {proof.map((p, i) => (
               <StaggerItem key={i}>
                 <p className="font-display text-2xl md:text-3xl font-semibold text-navy">{p.v}</p>

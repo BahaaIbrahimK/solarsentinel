@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
-import { ScopeIcon, UAVIcon, MethaneIcon, ReportIcon } from "@/components/brand/icons";
-import { Check } from "lucide-react";
+import { ScopeIcon, UAVIcon, MethaneIcon, ReportIcon, EnduranceIcon, RepairIcon } from "@/components/brand/icons";
 
 const steps = [
   { Icon: ScopeIcon, label: "Scope the site", sub: "Define the flight path and monitoring objective." },
@@ -11,11 +10,11 @@ const steps = [
 ];
 
 const deliverables = [
-  "Recurring methane monitoring",
-  "Source localization",
-  "Quantified emission estimates",
-  "Automated geotagged reports",
-  "Optional repair verification",
+  { Icon: EnduranceIcon, text: "Recurring methane monitoring" },
+  { Icon: ScopeIcon, text: "Source localization" },
+  { Icon: MethaneIcon, text: "Quantified emission estimates" },
+  { Icon: ReportIcon, text: "Automated geotagged reports" },
+  { Icon: RepairIcon, text: "Optional repair verification" },
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -112,14 +111,14 @@ const HowItWorks = () => {
 
         <Reveal>
           <div className="rounded-3xl bg-navy p-8 md:p-12">
-            <p className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-6">Every engagement delivers</p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-4">
+            <p className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-8">Every engagement delivers</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
               {deliverables.map((d, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-gold/15 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-gold" />
-                  </span>
-                  <span className="text-primary-foreground/80 text-sm leading-snug">{d}</span>
+                <div key={i} className="group">
+                  <div className="w-11 h-11 rounded-xl bg-primary-foreground/[0.06] border border-primary-foreground/10 flex items-center justify-center text-gold mb-3 transition-colors group-hover:bg-gold group-hover:text-navy">
+                    <d.Icon className="w-5 h-5" />
+                  </div>
+                  <span className="text-primary-foreground/80 text-sm leading-snug block">{d.text}</span>
                 </div>
               ))}
             </div>

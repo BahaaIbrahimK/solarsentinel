@@ -6,7 +6,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const specs = [
   { target: 4.0, decimals: 2, suffix: "", unit: "m", label: "Wingspan" },
-  { target: 1.45, decimals: 2, suffix: "", unit: "m", label: "Length" },
+  { target: 1.8, decimals: 1, suffix: "", unit: "m", label: "Length" },
   { target: 3.63, decimals: 2, suffix: "", unit: "kg", label: "Optimized AUW" },
   { target: 12, decimals: 0, suffix: "", unit: "m/s", label: "Cruise speed" },
   { target: 128.4, decimals: 1, suffix: "", unit: "m", label: "Max altitude" },
@@ -75,7 +75,7 @@ const AirframeBlueprint = () => {
       </motion.g>
       <motion.g variants={fade} custom={3}>
         <rect x="8" y="200" width="52" height="20" rx="3" fill="hsl(var(--navy))" stroke={gold} strokeWidth="0.75" />
-        <text x="34" y="214" textAnchor="middle" fill={gold} fontSize="12" fontFamily="monospace">1.45 m</text>
+        <text x="34" y="214" textAnchor="middle" fill={gold} fontSize="12" fontFamily="monospace">1.80 m</text>
       </motion.g>
 
       {/* main wing */}
