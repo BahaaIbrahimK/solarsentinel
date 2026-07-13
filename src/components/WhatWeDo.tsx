@@ -3,7 +3,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SolarWingIcon, LaserSensorIcon, MethaneIcon } from "@/components/brand/icons";
 import uavSky from "@/assets/uav-sky-new.jpg";
 import flyover from "@/assets/hero-refinery-flyover.jpg";
-import missionPath from "@/assets/mission-path.jpg";
+import methaneDetection from "@/assets/methane-detection.jpg";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -43,8 +43,9 @@ const rows = [
       { v: "In-flight", l: "Processing" },
       { v: "Geotagged", l: "Reports" },
     ],
-    img: missionPath,
-    alt: "Autonomous mission flight path over a facility",
+    img: methaneDetection,
+    alt: "Aerial methane detection point-cloud over a facility, with a leak hotspot and spectral readout",
+    tag: "Example output",
   },
 ];
 
@@ -100,6 +101,11 @@ const WhatWeDo = () => {
                 <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_70px_-30px_hsl(var(--navy)/0.4)] border border-navy/5">
                   <img src={r.img} alt={r.alt} loading="lazy" className="w-full aspect-[4/3] object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
+                  {r.tag && (
+                    <span className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-navy/70 backdrop-blur-sm text-gold text-[10px] font-mono uppercase tracking-wider">
+                      {r.tag}
+                    </span>
+                  )}
                 </div>
               </motion.div>
             </div>
