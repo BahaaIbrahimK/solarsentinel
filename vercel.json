@@ -1,0 +1,17 @@
+{
+  "redirects": [
+    {
+      "source": "/media/manufacturing",
+      "destination": "https://youtu.be/YOUR_MFG_VIDEO_ID",
+      "permanent": false
+    },
+    {
+      "source": "/media/flight-test",
+      "destination": "https://youtu.be/YOUR_FLIGHT_VIDEO_ID",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
