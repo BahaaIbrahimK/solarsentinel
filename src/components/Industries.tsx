@@ -1,60 +1,52 @@
+import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
-import { GitBranch, Trash2, Factory } from "lucide-react";
+// Unsplash License (free for commercial use, no attribution required): photo by Buddy AN, unsplash.com/photos/Ol9KJUYKVwg
+import refinery from "@/assets/industries-refinery.jpg";
 
-const roadmap = [
-  { icon: GitBranch, name: "Pipeline Corridors" },
-  { icon: Trash2, name: "Landfills" },
-];
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const Industries = () => {
   return (
-    <section id="industries" className="py-24 md:py-32 bg-sand">
-      <div className="max-w-6xl mx-auto px-6">
-        <Reveal className="max-w-3xl mb-12">
-          <p className="text-gold text-xs font-semibold uppercase tracking-[0.28em] mb-4">Industries</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-navy leading-[1.08] mb-5">
-            Built for refineries &amp; gas-processing plants.
-          </h2>
-          <p className="text-muted-foreground text-base leading-relaxed">
-            Phase 1 is intentionally narrow: large, methane-relevant industrial sites in Saudi Arabia's Eastern
-            Province, where manual and helicopter-based inspection is costly or too infrequent.
-          </p>
-        </Reveal>
+    <section id="industries" className="bg-sand overflow-hidden">
+      <div className="grid lg:grid-cols-2 lg:min-h-[680px]">
+        {/* Photograph, bleeding to the viewport edge */}
+        <div className="relative h-[300px] sm:h-[420px] lg:h-auto overflow-hidden">
+          <motion.img
+            src={refinery}
+            alt="Refinery distillation columns and process units"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover object-[55%_50%]"
+            initial={{ scale: 1.08 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.6, ease }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/25 via-transparent to-transparent" />
+        </div>
 
-        <Reveal delay={0.1}>
-          <div className="relative rounded-3xl bg-navy p-8 md:p-12 overflow-hidden mb-8">
-            <div className="absolute inset-0 dot-grid opacity-30" />
-            <div className="relative flex items-start gap-6">
-              <div className="w-14 h-14 rounded-2xl bg-gold flex items-center justify-center shrink-0 text-navy">
-                <Factory className="w-7 h-7" />
-              </div>
-              <div>
-                <h3 className="font-display font-semibold text-primary-foreground text-xl md:text-2xl mb-3">
-                  Oil &amp; gas refineries and gas-processing plants
-                </h3>
-                <p className="text-primary-foreground/60 text-base leading-relaxed max-w-2xl">
-                  Recurring methane screening, source localization, and repair verification for large, distributed
-                  industrial footprints, designed for operations, integrity, and emissions teams that need frequent,
-                  quantified coverage.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
+        {/* Text */}
+        <div className="flex items-center px-6 py-20 md:py-24 lg:px-16 xl:px-24">
+          <Reveal className="max-w-xl">
+            <p className="text-gold text-xs font-semibold uppercase tracking-[0.28em] mb-4">Industries</p>
+            <h2 className="font-display text-3xl md:text-5xl font-semibold text-navy leading-[1.08]">
+              Built for refineries &amp; <span className="whitespace-nowrap">gas-processing</span> plants.
+            </h2>
+            <p className="text-navy/80 text-lg leading-relaxed mt-7">
+              Phase 1 is intentionally narrow: large, methane-relevant industrial sites in Saudi Arabia's Eastern
+              Province, where manual and helicopter-based inspection is costly or too infrequent.
+            </p>
+            <p className="text-muted-foreground text-base leading-relaxed mt-5">
+              Designed for operations, integrity and emissions teams that need frequent, quantified coverage:
+              recurring methane screening, source localization and repair verification across large, distributed
+              sites.
+            </p>
 
-        <Reveal delay={0.15}>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            <span className="text-muted-foreground text-xs font-semibold uppercase tracking-[0.2em]">On the roadmap</span>
-            <div className="flex flex-wrap gap-3">
-              {roadmap.map((r, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-dashed border-navy/25 text-navy/60 text-sm bg-card/50">
-                  <r.icon className="w-4 h-4" />
-                  {r.name}
-                </span>
-              ))}
+            <div className="mt-10 pt-6 border-t border-navy/15">
+              <p className="text-navy/50 text-[11px] font-semibold uppercase tracking-[0.2em]">Next on the roadmap</p>
+              <p className="font-display text-navy text-lg mt-2">Pipeline corridors and landfills.</p>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
