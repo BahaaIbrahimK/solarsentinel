@@ -1,81 +1,68 @@
-import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
-import { SolarWingIcon, LaserSensorIcon, EnduranceIcon, RepairIcon } from "@/components/brand/icons";
-import { ScanRipple } from "@/components/brand/ScanRipple";
+import { Reveal } from "@/components/motion/Reveal";
+
+const reasons = [
+  {
+    title: "Methane-specific sensing",
+    text: "TDLAS detects methane directly, not a proxy signal, for higher confidence than optical gas imaging or standard drone payloads.",
+    fact: "Tunable-diode laser sensing",
+  },
+  {
+    title: "Large-site coverage",
+    text: "High endurance means fewer mission resets, built for recurring, site-scale screening.",
+    fact: "4.0 m wing · hand-launched",
+  },
+  {
+    title: "Zero-emission by design",
+    text: "Solar power removes fuel and major operating costs, aligned with decarbonization goals.",
+    fact: "Solar-assisted electric flight",
+  },
+  {
+    title: "Repeatable & verifiable",
+    text: "A recurring service model with optional post-repair verification. Proof the leak was found and fixed, survey after survey.",
+    fact: "Post-repair verification",
+  },
+];
 
 const WhySolarSentinel = () => {
   return (
     <section id="why" className="py-24 md:py-32 bg-background">
-      <div className="max-w-6xl mx-auto px-6">
-        <Reveal className="max-w-2xl mb-14">
-          <p className="text-gold text-xs font-semibold uppercase tracking-[0.28em] mb-4">Why SolarSentinel</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-navy leading-[1.08]">
-            The best fit for frequent, large-site methane screening.
-          </h2>
-          <p className="text-muted-foreground text-base mt-5 leading-relaxed">
-            Not a replacement for every LDAR method. It is the right tool where current approaches are fragmented or costly.
-          </p>
-        </Reveal>
+      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="lg:col-span-5">
+          <Reveal className="lg:sticky lg:top-32">
+            <p className="text-gold text-xs font-semibold uppercase tracking-[0.28em] mb-4">Why SolarSentinel</p>
+            <h2 className="font-display text-3xl md:text-5xl font-semibold text-navy leading-[1.08]">
+              The best fit for frequent, <span className="whitespace-nowrap">large-site</span> methane screening.
+            </h2>
+            <div className="mt-8 pl-5 border-l-2 border-gold">
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Not a replacement for every LDAR method. It is the right tool where current approaches are fragmented
+                or costly.
+              </p>
+            </div>
+          </Reveal>
+        </div>
 
-        <Stagger className="grid md:grid-cols-3 gap-5 auto-rows-fr">
-          {/* Large feature — methane-specific sensing */}
-          <StaggerItem className="md:col-span-2">
-            <div className="relative h-full overflow-hidden rounded-3xl bg-navy p-8 md:p-10">
-              <ScanRipple className="absolute -right-10 -top-10 w-56 h-56 opacity-30" />
-              <div className="relative">
-                <div className="w-12 h-12 rounded-xl bg-gold flex items-center justify-center text-navy mb-6">
-                  <LaserSensorIcon className="w-6 h-6" />
+        <ol className="lg:col-span-7 border-b border-navy/10">
+          {reasons.map((r, i) => (
+            <li key={r.title} className="border-t border-navy/10">
+              <Reveal y={20} delay={i * 0.05}>
+                <div className="group grid grid-cols-[3rem_1fr] md:grid-cols-[4.5rem_1fr] py-8 md:py-10">
+                  <span className="font-display text-sm md:text-base font-semibold text-gold tabular-nums pt-1.5">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-xl md:text-[1.75rem] font-semibold text-navy leading-tight">{r.title}</h3>
+                    <p className="text-muted-foreground text-base leading-relaxed mt-3 max-w-xl">{r.text}</p>
+                    <p className="mt-5 inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy/55">
+                      <span className="w-4 h-px bg-gold transition-all duration-300 group-hover:w-7" />
+                      {r.fact}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-display text-2xl font-semibold text-primary-foreground mb-3">Methane-specific sensing</h3>
-                <p className="text-primary-foreground/60 text-base leading-relaxed max-w-md">
-                  TDLAS detects methane directly, not a proxy signal, for higher confidence than optical gas imaging or
-                  standard drone payloads.
-                </p>
-              </div>
-            </div>
-          </StaggerItem>
-
-          {/* Zero-emission */}
-          <StaggerItem>
-            <div className="relative h-full rounded-3xl border border-border bg-gradient-to-br from-gold/[0.12] to-transparent p-8">
-              <div className="w-12 h-12 rounded-xl bg-navy flex items-center justify-center text-gold mb-5">
-                <SolarWingIcon className="w-6 h-6" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-navy mb-2">Zero-emission by design</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Solar power removes fuel and major operating costs, aligned with decarbonization goals.
-              </p>
-            </div>
-          </StaggerItem>
-
-          {/* Large-site coverage */}
-          <StaggerItem>
-            <div className="relative h-full rounded-3xl border border-border bg-card p-8">
-              <div className="w-12 h-12 rounded-xl bg-navy flex items-center justify-center text-gold mb-5">
-                <EnduranceIcon className="w-6 h-6" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-navy mb-2">Large-site coverage</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                High endurance means fewer mission resets, built for recurring, site-scale screening.
-              </p>
-            </div>
-          </StaggerItem>
-
-          {/* Repeatable — wide */}
-          <StaggerItem className="md:col-span-2">
-            <div className="relative h-full rounded-3xl border border-border bg-card p-8 flex flex-col sm:flex-row sm:items-center gap-6">
-              <div className="w-12 h-12 rounded-xl bg-navy flex items-center justify-center text-gold shrink-0">
-                <RepairIcon className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="font-display text-xl font-semibold text-navy mb-2">Repeatable &amp; verifiable</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed max-w-lg">
-                  A recurring service model with optional post-repair verification. Proof the leak was found and fixed,
-                  survey after survey.
-                </p>
-              </div>
-            </div>
-          </StaggerItem>
-        </Stagger>
+              </Reveal>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
