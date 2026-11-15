@@ -1,37 +1,26 @@
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import StatsBand from "@/components/StatsBand";
-import WhatWeDo from "@/components/WhatWeDo";
-import SystemArchitecture from "@/components/SystemArchitecture";
-import Specifications from "@/components/Specifications";
-import HowItWorks from "@/components/HowItWorks";
-import Industries from "@/components/Industries";
-import BuiltInHouse from "@/components/BuiltInHouse";
-import FlightProof from "@/components/FlightProof";
-import WhySolarSentinel from "@/components/WhySolarSentinel";
-import Team from "@/components/Team";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import SiteNav from "@/components/site/SiteNav";
+import FilmHero from "@/components/home/FilmHero";
+import Intro from "@/components/home/Intro";
+import HowWeWork from "@/components/home/HowWeWork";
+import BuiltAndFlown from "@/components/home/BuiltAndFlown";
+import Industries from "@/components/home/Industries";
+import TeamGrid from "@/components/site/TeamGrid";
+import CtaPair from "@/components/site/CtaPair";
+import SiteFooter from "@/components/site/SiteFooter";
 
-const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <Navigation />
-      <Hero />
-      <StatsBand />
-      <WhatWeDo />
-      <SystemArchitecture />
-      <Specifications />
-      <HowItWorks />
-      <Industries />
-      <BuiltInHouse />
-      <FlightProof />
-      <WhySolarSentinel />
-      <Team />
-      <Contact />
-      <Footer />
-    </div>
-  );
-};
+/* Home page, Nov 2026 redesign v3: film, statement, how it works, flight film, industries, team, contact and about cards. */
+const Index = () => (
+  <div className="min-h-screen">
+    <SiteNav />
+    <FilmHero />
+    <Intro />
+    <HowWeWork />
+    <BuiltAndFlown />
+    <Industries />
+    <TeamGrid />
+    <CtaPair />
+    <SiteFooter />
+  </div>
+);
 
 export default Index;

@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+        body: ['Catamaran', 'Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -87,7 +87,7 @@ const Team = () => {
               <div>
                 <p className="font-display font-semibold text-navy text-sm">AIAA SciTech 2026 · Accepted</p>
                 <p className="text-muted-foreground text-xs mt-0.5 leading-relaxed">
-                  Peer-reviewed validation of the structural optimization, solar-power integration, and AI detection methodology.
+                  Paper accepted on structural optimisation, solar integration and the detection approach.
                 </p>
               </div>
             </div>
