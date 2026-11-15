@@ -4,16 +4,13 @@ const columns = [
   {
     title: "Explore",
     links: [
-      { label: "What We Do", href: "#what-we-do" },
-      { label: "Technology", href: "#architecture" },
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Industries", href: "#industries" },
+      { label: "How We Work", href: "#how-it-works" },
+      { label: "Flight Tests", href: "#flight" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "Manufacturing", href: "#built-in-house" },
       { label: "Team", href: "#team" },
       { label: "Request a Pilot", href: "#contact" },
     ],
