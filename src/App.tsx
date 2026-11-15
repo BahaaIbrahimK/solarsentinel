@@ -6,8 +6,6 @@ import { useEffect } from "react";
 import { MotionConfig } from "framer-motion";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
-import IndexV1 from "./pages/IndexV1";
-import IndexV2 from "./pages/IndexV2";
 import Manufacturing from "./pages/Manufacturing";
 import About from "./pages/About";
 import ContactPage from "./pages/ContactPage";
@@ -35,8 +33,6 @@ const App = () => (
           <Route path="/manufacturing" element={<Manufacturing />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/v1" element={<IndexV1 />} />
-          <Route path="/v2" element={<IndexV2 />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
